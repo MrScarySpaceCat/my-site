@@ -1,0 +1,227 @@
+/* Base Styles */
+body {
+	margin: 0;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	background: linear-gradient(
+		135deg,
+		#0d0d0d,
+		#1a1a1a
+	); /* Gradient background */
+	color: #e6e6e6;
+	line-height: 1.6;
+	overflow-x: hidden; /* Prevent horizontal scrolling */
+	padding: 30px 0; /* Added padding to prevent sticking to top/bottom */
+	text-align: center; /* Center everything by default */
+}
+a {
+	color: #64b5f6;
+	text-decoration: none;
+	transition: color 0.3s;
+}
+a:hover {
+	color: #82e9de; /* Lighter blue on hover */
+}
+h1,
+h2 {
+	color: #ffffff;
+	margin-bottom: 0.5em;
+	text-align: center; /* Center the h1 and h2 elements */
+}
+p {
+	margin-bottom: 1em;
+	text-align: center;
+}
+
+/* Container */
+.container {
+	width: 90%;
+	max-width: 800px;
+	margin: 50px auto; /* Center the container and add spacing from the top and bottom */
+	padding: 20px;
+	background: rgba(30, 30, 30, 0.9);
+	border-radius: 12px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+	animation: fadeIn 1.5s ease-out;
+}
+
+/* Profile Section */
+.profile {
+	text-align: center;
+	margin-bottom: 20px;
+}
+.profile img {
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	border: 3px solid #64b5f6;
+	margin: 0 10px;
+	transition: transform 0.3s;
+}
+.profile img:hover {
+	transform: scale(1.1);
+}
+
+/* Projects Section */
+.projects {
+	margin-top: 40px;
+	display: flex;
+	justify-content: center; /* Center the project cards */
+	gap: 20px; /* Space between project cards */
+	flex-wrap: wrap; /* Allow wrapping of cards on smaller screens */
+	text-align: center; /* Center the content in project cards */
+}
+
+.project-card {
+	background: rgba(30, 30, 30, 0.9);
+	padding: 20px;
+	margin-bottom: 20px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+	border-radius: 10px;
+	width: 300px; /* Increased width for better spacing */
+	text-align: center; /* Center text and button inside the card */
+	display: flex;
+	flex-direction: column; /* Stack the content vertically */
+	justify-content: space-between; /* Space between content and button */
+}
+
+.project-card h2 {
+	font-size: 1.8em;
+	margin-bottom: 10px;
+}
+
+.project-card p {
+	font-size: 1.1em;
+	color: #e6e6e6;
+	margin-bottom: 15px;
+}
+
+/* Button Styling */
+.project-card a.button {
+	display: inline-block;
+	padding: 10px 20px;
+	background: linear-gradient(45deg, #64b5f6, #82e9de);
+	color: #1a1a1a;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	box-shadow: 0 0 10px rgba(100, 181, 246, 0.7);
+	transition: transform 0.3s, background 0.3s;
+	width: 100%; /* Make the button fill the card */
+	text-align: center; /* Center the button text */
+	margin-top: auto; /* Push button to the bottom of the card */
+	box-sizing: border-box; /* Ensure padding doesn't cause overflow */
+}
+
+.project-card a.button:hover {
+	transform: scale(1.05);
+	background: linear-gradient(45deg, #82e9de, #64b5f6);
+}
+
+/* Social Links Section */
+.social-links {
+	display: flex;
+	justify-content: center;
+	gap: 15px;
+	margin-top: 20px;
+	text-align: center;
+}
+.social-links a {
+	display: inline-block;
+	transition: transform 0.3s;
+}
+.social-links img {
+	width: 40px;
+	height: 40px;
+	filter: brightness(0) invert(1);
+	transition: transform 0.3s, filter 0.3s;
+}
+.social-links a:hover img {
+	transform: scale(1.2);
+	filter: brightness(0) invert(0.7);
+}
+
+/* Animated Background */
+@keyframes gradientBackground {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+body {
+	background: linear-gradient(45deg, #1d1d1d, #333333, #0f0f0f, #1c1c1c);
+	background-size: 400% 400%;
+	animation: gradientBackground 10s ease infinite;
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Typography */
+h1 {
+	font-size: 2.5em;
+	text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+p {
+	font-size: 1.1em;
+	text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+}
+
+/* Button Styling */
+.button {
+	display: inline-block;
+	padding: 10px 20px;
+	margin-top: 10px;
+	background: linear-gradient(45deg, #64b5f6, #82e9de);
+	color: #1a1a1a;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	box-shadow: 0 0 10px rgba(100, 181, 246, 0.7);
+	transition: transform 0.3s, background 0.3s;
+	text-align: center; /* Center the button */
+	width: 200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.button:hover {
+	transform: scale(1.05);
+	background: linear-gradient(45deg, #82e9de, #64b5f6);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+	.profile img {
+		width: 100px;
+		height: 100px;
+	}
+	.social-links img {
+		width: 30px;
+		height: 30px;
+	}
+	.button {
+		width: 150px;
+	}
+	.project-card {
+		padding: 15px;
+	}
+	.project-card h2 {
+		font-size: 1.5em;
+	}
+	.project-card p {
+		font-size: 1em;
+	}
+}
