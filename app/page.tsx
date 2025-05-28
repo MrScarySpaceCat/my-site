@@ -1,48 +1,12 @@
+"use client";
+
 // Renamed to index.tsx for Next.js with TypeScript
-import Head from "next/head";
 import { JSX } from "react/jsx-runtime";
 import Image from "next/image";
 
 export default function Home(): JSX.Element {
 	return (
 		<>
-			{" "}
-			{/* React Fragment */}
-			<Head>
-				<title>Portfolio</title>
-				{/* Meta Tags for OG and Twitter as before */}
-				<meta
-					property="og:title"
-					content="Dylan's Portfolio - MrScarySpaceCat"
-				/>
-				<meta
-					property="og:description"
-					content="I am Dylan, a programmer and creator. Explore my portfolio, learn more about my projects, and find out how to reach me!"
-				/>
-				<meta
-					property="og:image"
-					content="https://mrscaryspacecat.dev/img/online-profile.webp"
-				/>
-				<meta property="og:url" content="https://mrscaryspacecat.dev/" />
-				<meta property="og:type" content="website" />
-				<meta property="og:site_name" content="MrScarySpaceCat's Portfolio" />
-				<meta property="og:locale" content="en_US" />
-				<meta name="twitter:card" content="summary_large_image" />
-				<meta
-					name="twitter:title"
-					content="Dylan's Portfolio - MrScarySpaceCat"
-				/>
-				<meta
-					name="twitter:description"
-					content="I am Dylan, a programmer and creator. Explore my portfolio, learn more about my projects, and find out how to reach me!"
-				/>
-				<meta
-					name="twitter:image"
-					content="https://mrscaryspacecat.dev/img/online-profile.webp"
-				/>
-				{/* Link to global styles - REMOVED as it's globally loaded via _app.tsx */}
-			</Head>
-			{/* Main Content */}
 			<div className="container">
 				{/* Profile Section */}
 				<section className="profile">
