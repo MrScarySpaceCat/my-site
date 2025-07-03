@@ -6,7 +6,7 @@ import Image from "next/image";
 
 function exactAgeFromUnix(birthTs: number) {
 	const now = new Date();
-	let b = new Date(birthTs * 1000);
+	const b = new Date(birthTs * 1000);
 	let years = now.getFullYear() - b.getFullYear();
 	let months = now.getMonth() - b.getMonth();
 	let days = now.getDate() - b.getDate();
@@ -26,7 +26,7 @@ function exactAgeFromUnix(birthTs: number) {
 
 export default function Home(): JSX.Element {
 	const birthTs = 1150215360;
-	const exact = exactAgeFromUnix(1150215360);
+	const exact = exactAgeFromUnix(birthTs);
 
 	return (
 		<>
