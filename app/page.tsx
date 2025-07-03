@@ -4,7 +4,30 @@
 import { JSX } from "react/jsx-runtime";
 import Image from "next/image";
 
+function exactAgeFromUnix(birthTs: number) {
+	const now = new Date();
+	let b = new Date(birthTs * 1000);
+	let years = now.getFullYear() - b.getFullYear();
+	let months = now.getMonth() - b.getMonth();
+	let days = now.getDate() - b.getDate();
+
+	if (days < 0) {
+		months--;
+		const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0).getDate();
+		days += prevMonth;
+	}
+	if (months < 0) {
+		years--;
+		months += 12;
+	}
+
+	return { years, months, days };
+}
+
 export default function Home(): JSX.Element {
+	const birthTs = 1150215360;
+	const exact = exactAgeFromUnix(1150215360);
+
 	return (
 		<>
 			<div className="container">
@@ -28,9 +51,9 @@ export default function Home(): JSX.Element {
 				<p>I am Dylan, or as the internet knows me, MrScarySpaceCat.</p>
 				<h1>About Me</h1>
 				<p>
-					I am an 18-year-old programmer currently studying Computer Science. I
-					primarily work with programming languages such as Python and
-					TypeScript.
+					I am an {exact.years}-year-old programmer currently studying Computer
+					Science. I primarily work with programming languages such as Python
+					and TypeScript.
 				</p>
 				<p>
 					I love hanging out and interacting with my friends, both online and in
