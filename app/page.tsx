@@ -25,7 +25,7 @@ function exactAgeFromUnix(birthTs: number) {
 }
 
 export default function Home(): JSX.Element {
-	const birthTs = 1150215360;
+	const birthTs = 1150171200;
 	const exact = exactAgeFromUnix(birthTs);
 
 	return (
