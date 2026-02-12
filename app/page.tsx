@@ -25,7 +25,7 @@ function exactAgeFromUnix(birthTs: number) {
 }
 
 export default function Home(): JSX.Element {
-	const birthTs = 1150171200;
+	const birthTs = 1150215360;
 	const exact = exactAgeFromUnix(birthTs);
 
 	return (
@@ -69,7 +69,7 @@ export default function Home(): JSX.Element {
 					<div className="project-card">
 						<h2>Agent Kitten</h2>
 						<p>
-							A Discord bot that uses Qwen2.5, an open-source large language
+							A Discord bot that uses GPT-OSS, an open-source large language
 							model, to interact with users. It can also play music.
 						</p>
 						<a
