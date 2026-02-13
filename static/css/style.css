@@ -105,9 +105,7 @@ p {
 	border-radius: 5px;
 	cursor: pointer;
 	box-shadow: 0 0 10px rgba(100, 181, 246, 0.7);
-	transition:
-		transform 0.3s,
-		background 0.3s;
+	transition: transform 0.3s, background 0.3s;
 	width: 100%; /* Make the button fill the card */
 	text-align: center; /* Center the button text */
 	margin-top: auto; /* Push button to the bottom of the card */
@@ -135,9 +133,7 @@ p {
 	width: 40px;
 	height: 40px;
 	filter: brightness(0) invert(1);
-	transition:
-		transform 0.3s,
-		filter 0.3s;
+	transition: transform 0.3s, filter 0.3s;
 }
 .social-links a:hover img {
 	transform: scale(1.2);
@@ -168,7 +164,7 @@ body {
 		opacity: 0;
 		transform: translateY(20px);
 	}
-	o {
+	to {
 		opacity: 1;
 		transform: translateY(0);
 	}
@@ -195,15 +191,12 @@ p {
 	border-radius: 5px;
 	cursor: pointer;
 	box-shadow: 0 0 10px rgba(100, 181, 246, 0.7);
-	transition:
-		transform 0.3s,
-		background 0.3s;
+	transition: transform 0.3s, background 0.3s;
 	text-align: center; /* Center the button */
 	width: 200px;
 	margin-left: auto;
 	margin-right: auto;
 }
-
 .button:hover {
 	transform: scale(1.05);
 	background: linear-gradient(45deg, #82e9de, #64b5f6);
