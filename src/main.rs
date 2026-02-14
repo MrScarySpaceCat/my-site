@@ -4,6 +4,8 @@ use chrono::{DateTime, Utc};
 use handlebars::Handlebars;
 use serde::Serialize;
 use serde_json::json;
+use tokio::net::TcpListener;
+use tokio::signal::unix::{SignalKind, signal};
 use warp::Filter;
 
 struct WithTemplate<T: Serialize> {
@@ -51,5 +53,15 @@ async fn main() {
 
     let routes = route.or(static_files);
 
-    warp::serve(routes).run(([0, 0, 0, 0], 3000)).await;
+    let listener = TcpListener::bind("0.0.0.0:3000").await.unwrap();
+
+    let mut sig = signal(SignalKind::terminate()).expect("Not recognizing SIGTERM");
+
+    println!("Server is up.");
+
+    warp::serve(routes)
+        .incoming(listener)
+        .graceful(async move { sig.recv().await.unwrap() })
+        .run()
+        .await;
 }
