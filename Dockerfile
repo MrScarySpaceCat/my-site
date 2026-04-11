@@ -49,6 +49,8 @@ RUN --mount=type=cache,target=/app/target/ \
 FROM debian:trixie AS final
 ARG UID
 
+ENV DEBIAN_FRONTEND=noninteractive
+
 RUN groupadd \
     --gid "${UID}" \
     --system \
