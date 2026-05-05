@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 
 ARG RUST_VERSION=1.95.0
-ARG APP_NAME=agent-kitten
+ARG APP_NAME=my-site
 ARG UID=10001
 
 FROM rust:${RUST_VERSION}-trixie AS build
