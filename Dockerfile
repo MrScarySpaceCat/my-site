@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-ARG RUST_VERSION=1.95.0
+ARG RUST_VERSION=1.96.0
 ARG APP_NAME=my-site
 ARG UID=10001
 
@@ -12,8 +12,8 @@ ENV DEBIAN_FRONTEND=noninteractive
 WORKDIR /app
 
 RUN apt-get update \
-    && apt-get install -y \
-    cmake \
+    && apt-get install -y --no-install-recommends \
+    cmake=3.31.6-2 \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
@@ -47,8 +47,8 @@ RUN groupadd \
 
 # Install only what's needed to run the binary
 RUN apt-get update \
-    && apt-get install -y \
-    ca-certificates \
+    && apt-get install -y --no-install-recommends \
+    ca-certificates=20250419 \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
